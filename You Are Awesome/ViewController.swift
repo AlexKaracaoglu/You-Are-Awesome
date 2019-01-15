@@ -21,10 +21,14 @@ class ViewController: UIViewController {
     @IBAction func showMessagePressed(_ sender: UIButton) {
         print("The button was clicked good sir")
         messageLabel.text = "You are Awesome!"
+        messageLabel.textColor = UIColor.green
+        messageLabel.textAlignment = NSTextAlignment.left
     }
     
     @IBAction func showAnotherMessagePressed(_ sender: UIButton) {
         messageLabel.text = "You are Grrrrrrrr8"
+        messageLabel.textColor = UIColor.purple
+        messageLabel.textAlignment = NSTextAlignment.right
     }
     
     @IBAction func clearMessage(_ sender: UIButton) {
