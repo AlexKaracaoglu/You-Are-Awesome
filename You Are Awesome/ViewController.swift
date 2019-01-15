@@ -20,15 +20,22 @@ class ViewController: UIViewController {
 
     @IBAction func showMessagePressed(_ sender: UIButton) {
         print("The button was clicked good sir")
-        messageLabel.text = "You are Awesome!"
-        messageLabel.textColor = UIColor.green
-        messageLabel.textAlignment = NSTextAlignment.left
-    }
-    
-    @IBAction func showAnotherMessagePressed(_ sender: UIButton) {
-        messageLabel.text = "You are Grrrrrrrr8"
-        messageLabel.textColor = UIColor.purple
-        messageLabel.textAlignment = NSTextAlignment.right
+        
+        if messageLabel.text == "You are Awesome!" {
+            messageLabel.text = "You are Grrrrrrrr8"
+            messageLabel.textColor = UIColor.purple
+            messageLabel.textAlignment = NSTextAlignment.right
+        }
+        else if messageLabel.text == "You are Grrrrrrrr8" {
+            messageLabel.text = "You are Quite Amazing"
+            messageLabel.textColor = UIColor.blue
+            messageLabel.textAlignment = NSTextAlignment.center
+        }
+        else {
+            messageLabel.text = "You are Awesome!"
+            messageLabel.textColor = UIColor.green
+            messageLabel.textAlignment = NSTextAlignment.left
+        }
     }
     
     @IBAction func clearMessage(_ sender: UIButton) {

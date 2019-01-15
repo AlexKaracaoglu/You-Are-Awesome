@@ -34,17 +34,8 @@
                                     <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vQ7-wq-wjR"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7yh-m8-ym9">
-                                <rect key="frame" x="48" y="184" width="278" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="27"/>
-                                <state key="normal" title="Show Another Message"/>
-                                <connections>
-                                    <action selector="showAnotherMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EC3-nT-5tM"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9j-ux-8FU">
-                                <rect key="frame" x="164" y="240" width="62" height="48"/>
+                                <rect key="frame" x="156" y="184" width="62" height="48"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="27"/>
                                 <state key="normal" title="Clear"/>
