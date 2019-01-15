@@ -15,24 +15,25 @@ class ViewController: UIViewController {
     // viewDidLoad executes when app's view loads
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Hey you, yes you, just wanted to say the view loaded!")
     }
 
     @IBAction func showMessagePressed(_ sender: UIButton) {
-        print("The button was clicked good sir")
+        let messageAwesome = "You are Awesome!"
+        let messageGreat = "You are Grrrrrrrr8"
+        let messageAmazing = "You are Quite Amazing"
         
-        if messageLabel.text == "You are Awesome!" {
-            messageLabel.text = "You are Grrrrrrrr8"
+        if messageLabel.text == messageAwesome {
+            messageLabel.text = messageGreat
             messageLabel.textColor = UIColor.purple
             messageLabel.textAlignment = NSTextAlignment.right
         }
-        else if messageLabel.text == "You are Grrrrrrrr8" {
-            messageLabel.text = "You are Quite Amazing"
+        else if messageLabel.text == messageGreat {
+            messageLabel.text = messageAmazing
             messageLabel.textColor = UIColor.blue
             messageLabel.textAlignment = NSTextAlignment.center
         }
         else {
-            messageLabel.text = "You are Awesome!"
+            messageLabel.text = messageAwesome
             messageLabel.textColor = UIColor.green
             messageLabel.textAlignment = NSTextAlignment.left
         }
