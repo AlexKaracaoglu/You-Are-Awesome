@@ -27,7 +27,16 @@ class ViewController: UIViewController {
                         "You are Pretty Cool",
                         "This is a pretty long one so we can fix it"]
         
-        messageLabel.text = messages.randomElement()!
+        var newIndex = -47
+        repeat {
+            newIndex = Int.random(in: 0...messages.count-1)
+        } while index == newIndex
+        
+        index = newIndex
+        
+        messageLabel.text = messages[index]
+        
+//        messageLabel.text = messages.randomElement()!
         
 //        messageLabel.text = messages[index]
 //        index = index + 1
