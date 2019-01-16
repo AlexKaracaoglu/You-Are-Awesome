@@ -27,11 +27,13 @@ class ViewController: UIViewController {
                         "You are Pretty Cool",
                         "This is a pretty long one so we can fix it"]
         
-        messageLabel.text = messages[index]
-        index = index + 1
-        if index == messages.count {
-            index = 0
-        }
+        messageLabel.text = messages.randomElement()!
+        
+//        messageLabel.text = messages[index]
+//        index = index + 1
+//        if index == messages.count {
+//            index = 0
+//        }
         
         
 //        let messageAwesome = "You are Awesome!"
