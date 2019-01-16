@@ -51,7 +51,7 @@
                                     <action selector="clearMessage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NUl-li-b9d"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image8" translatesAutoresizingMaskIntoConstraints="NO" id="dMA-di-Wxy">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dMA-di-Wxy">
                                 <rect key="frame" x="16" y="240" width="343" height="407"/>
                             </imageView>
                         </subviews>
@@ -73,6 +73,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="dMA-di-Wxy" id="wHP-1c-bss"/>
                         <outlet property="messageLabel" destination="fyA-cg-SBZ" id="6As-b0-VVs"/>
                     </connections>
                 </viewController>
@@ -80,7 +81,4 @@
             </objects>
         </scene>
     </scenes>
-    <resources>
-        <image name="image8" width="774" height="581"/>
-    </resources>
 </document>
