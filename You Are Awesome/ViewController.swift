@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var soundSwitch: UISwitch!
     var index = -1
     var imageIndex = -1
     var soundIndex = -1
@@ -68,43 +69,24 @@ class ViewController: UIViewController {
         imageView.image = UIImage(named: "image\(imageIndex)")
         
         // Sounds
-        soundIndex = nonRepeating(lastIndex: soundIndex, maxValue: numberOfSounds)
-        let soundName = "sound\(soundIndex)"
-        playSound(soundName: soundName, audioPlayer: &soundPlayer)
-        
-        
-//        messageLabel.text = messages.randomElement()!
-        
-//        messageLabel.text = messages[index]
-//        index = index + 1
-//        if index == messages.count {
-//            index = 0
-//        }
-        
-        
-//        let messageAwesome = "You are Awesome!"
-//        let messageGreat = "You are Grrrrrrrr8"
-//        let messageAmazing = "You are Quite Amazing"
-//
-//        if messageLabel.text == messageAwesome {
-//            messageLabel.text = messageGreat
-//            messageLabel.textColor = UIColor.purple
-//            messageLabel.textAlignment = NSTextAlignment.right
-//        }
-//        else if messageLabel.text == messageGreat {
-//            messageLabel.text = messageAmazing
-//            messageLabel.textColor = UIColor.blue
-//            messageLabel.textAlignment = NSTextAlignment.center
-//        }
-//        else {
-//            messageLabel.text = messageAwesome
-//            messageLabel.textColor = UIColor.green
-//            messageLabel.textAlignment = NSTextAlignment.left
-//        }
+        if soundSwitch.isOn {
+            soundIndex = nonRepeating(lastIndex: soundIndex, maxValue: numberOfSounds)
+            let soundName = "sound\(soundIndex)"
+            playSound(soundName: soundName, audioPlayer: &soundPlayer)
+        }
     }
     
     @IBAction func clearMessage(_ sender: UIButton) {
         messageLabel.text = ""
+        imageView.image = nil
+    }
+    
+    
+    @IBAction func soundSwitchPressed(_ sender: UISwitch) {
+        if !soundSwitch.isOn && soundIndex != -1 {
+            soundPlayer.stop()
+        }
+        
     }
     
 }
