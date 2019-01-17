@@ -25,38 +25,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    @IBAction func showMessagePressed(_ sender: UIButton) {
-        
-        
-        let messages = ["You are Awesome!",
-                        "You are Grrrrrrrr8",
-                        "You are Quite Amazing",
-                        "You are Pretty Cool",
-                        "This is a pretty long one so we can fix it"]
-        
-        // Messages
-        var newIndex: Int
-        repeat {
-            newIndex = Int.random(in: 0...messages.count-1)
-        } while index == newIndex
-        index = newIndex
-        
-        messageLabel.text = messages[index]
-        
-        // Images
-        repeat {
-            newIndex = Int.random(in: 0..<numberOfImages)
-        } while imageIndex == newIndex
-        imageIndex = newIndex
-        imageView.image = UIImage(named: "image\(newIndex)")
-        
-        // Sounds
-        repeat {
-            newIndex = Int.random(in: 0..<numberOfSounds)
-        } while soundIndex == newIndex
-        soundIndex = newIndex
-        let soundName = "sound\(newIndex)"
+    
+    func playSound(soundName: String) {
         if let sound = NSDataAsset(name: soundName) {
             do {
                 try soundPlayer = AVAudioPlayer(data: sound.data)
@@ -69,7 +39,38 @@ class ViewController: UIViewController {
         else {
             print("ERROR file \(soundName) didn't load")
         }
+    }
+    
+    func nonRepeating(lastIndex: Int, maxValue: Int) -> Int {
+        var newIndex: Int
+        repeat {
+            newIndex = Int.random(in: 0..<maxValue)
+        } while lastIndex == newIndex
+        return newIndex
+    }
+    
+    @IBAction func showMessagePressed(_ sender: UIButton) {
         
+        
+        let messages = ["You are Awesome!",
+                        "You are Grrrrrrrr8",
+                        "You are Quite Amazing",
+                        "You are Pretty Cool",
+                        "This is a pretty long one so we can fix it"]
+        
+        // Messages
+        index = nonRepeating(lastIndex: index, maxValue: messages.count)
+        
+        messageLabel.text = messages[index]
+        
+        // Images
+        imageIndex = nonRepeating(lastIndex: imageIndex, maxValue: numberOfImages)
+        imageView.image = UIImage(named: "image\(imageIndex)")
+        
+        // Sounds
+        soundIndex = nonRepeating(lastIndex: soundIndex, maxValue: numberOfSounds)
+        let soundName = "sound\(soundIndex)"
+        playSound(soundName: soundName)
         
         
 //        messageLabel.text = messages.randomElement()!
